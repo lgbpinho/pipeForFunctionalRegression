@@ -1,0 +1,51 @@
+﻿#populationSize: 1000 # number of candidates in every generation
+learningRate: 0.01 # tradeoff between convergence rate and quality of fit
+epsilon: 0.01 # I have no clue
+eras: 100 # number of generations of candidates
+updateTowardsEliteProb: 0.5 # probability of adapting the PPT towards the best candidate of all generations so far
+clr: 0.5 # negocio la que faz num sei o que
+pm: 3 # hmmm, tem a ver com a probabilidade de mutação
+mutationRate: 0.8 # ok, eu vou reler o artigo
+#nvar: 1 # the arity of the function you are trying to approximate
+hmax: 8 # the height of the PPT and also the heighest tree possible
+operators: # a Python dict whose entries are also dicts of the form {"label": {function: !!python/name: module_name.function_name, arity: n, probability: p}}
+    "expDeMenosX": 
+        function: !!python/name:myFunctions.expMinusOne
+        arity: 1
+        probability: 1
+    "exp": 
+        function: !!python/name:math.exp
+        arity: 1
+        probability: 1
+    "+": 
+        function: !!python/name:operator.add
+        arity: 2
+        probability: 1
+    "*": 
+        function: !!python/name:operator.mul
+        arity: 2
+        probability: 1
+#    "/": 
+#        function: !!python/name:myFunctions.safeDiv
+#        arity: 2
+#        probability: 1
+    "^": 
+        function: !!python/name:operator.pow
+        arity: 2
+        probability: 1
+    "1/":
+        function: !!python/name:myFunctions.inv
+        arity: 1
+        probability: 1
+#    "log":
+#        function: !!python/name:math.log
+#        arity: 1
+#        probability: 1
+        #    "sin":
+#        function: !!python/name:math.sin
+#        arity: 1
+#        probability: 1
+#    "cos":
+#        function: !!python/name:math.cos
+#        arity: 1
+#        probability: 1
